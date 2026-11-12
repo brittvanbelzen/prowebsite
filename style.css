@@ -1,0 +1,672 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: white;
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+
+
+
+.header {
+    height: 76px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    border-bottom: 1px solid #ddd;
+    background: white;
+}
+
+.header-links {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 42px;
+}
+
+.nos-logo {
+    width: 78px;
+    height: auto;
+    object-fit: contain;
+}
+
+.header-links a {
+    font-size: 18px;
+    font-weight: bold;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.header-links a.active {
+    color: #e60000;
+}
+
+.header-links a.active::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: #e60000;
+}
+
+.header-links .live {
+    background: #ffebeb;
+    color: #e60000;
+    height: 44px;
+    padding: 0 17px;
+    border-radius: 5px;
+}
+
+
+
+.header-rechts {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.header-icon {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 17px;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+.vergrootglas {
+    width: 19px;
+    height: 19px;
+    border: 2px solid #222;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+}
+
+.vergrootglas::after {
+    content: "";
+    width: 9px;
+    height: 2px;
+    background: #222;
+    position: absolute;
+    right: -7px;
+    bottom: -4px;
+    transform: rotate(48deg);
+}
+
+.instellingen {
+    font-size: 23px;
+    line-height: 1;
+}
+
+.teletext-logo {
+    width: 76px;
+    height: auto;
+    object-fit: contain;
+}
+
+.npo-logo {
+    width: 43px;
+    height: auto;
+    object-fit: contain;
+}
+
+.menu-knop {
+    font-size: 17px;
+    white-space: nowrap;
+}
+
+
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 28px;
+    height: 69px;
+    padding: 0 25px;
+    border-bottom: 1px solid #ddd;
+    white-space: nowrap;
+    overflow-x: auto;
+}
+
+.menu a {
+    font-size: 17px;
+    flex-shrink: 0;
+}
+
+.menu .geselecteerd {
+    background: #222;
+    color: white;
+    padding: 11px 17px;
+    border-radius: 25px;
+}
+
+.menu .pijl {
+    font-size: 23px;
+}
+
+
+
+.pagina {
+    width: 88%;
+    max-width: 1320px;
+    margin: 36px auto 0;
+}
+
+.nieuws-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 2.25fr) minmax(290px, 0.85fr);
+    gap: 28px;
+    align-items: start;
+}
+
+.linkerkolom {
+    min-width: 0;
+}
+
+.rechterkolom {
+    min-width: 0;
+}
+
+
+
+.nieuwsblok {
+    border: 1px solid #e9e9e9;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+
+.hoofdartikel {
+    margin-bottom: 25px;
+}
+
+.hoofdfoto {
+    width: 100%;
+    height: 350px;
+    position: relative;
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.hoofdfoto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hoofdfoto-tekst {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 75px 22px 22px;
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgba(0,0,0,0.82)
+    );
+}
+
+.hoofdfoto-tekst h1 {
+    color: white;
+    font-size: 25px;
+    line-height: 1.3;
+    font-weight: bold;
+}
+
+
+
+
+.crisis-artikelen {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    padding-top: 22px;
+    border-top: 1px solid #eee;
+}
+
+.crisis-artikel {
+    min-width: 0;
+}
+
+.crisis-artikel img {
+    width: 100%;
+    height: 165px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.crisis-artikel h3 {
+    font-size: 16px;
+    line-height: 1.35;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+
+
+
+.meer-knop-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+    padding-bottom: 5px;
+}
+
+.meer-knop {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    padding: 7px 10px 7px 17px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.meer-knop span {
+    background: #e60000;
+    color: white;
+    border-radius: 50%;
+    width: 29px;
+    height: 29px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+}
+
+
+
+
+.extra-artikelen {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+    margin-top: 35px;
+}
+
+.artikel {
+    min-width: 0;
+}
+
+.artikel img {
+    width: 100%;
+    height: 155px;
+    object-fit: cover;
+    border-radius: 4px;
+    display: block;
+}
+
+.artikel h3 {
+    font-size: 17px;
+    line-height: 1.35;
+    margin-top: 12px;
+    margin-bottom: 9px;
+}
+
+.artikel p {
+    color: #666;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+
+
+
+.advertentie {
+    background: #eee;
+    padding: 15px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.advertentie h3 {
+    font-size: 15px;
+    color: #666;
+    margin-bottom: 12px;
+}
+
+.advertentie img {
+    width: 100%;
+    display: block;
+}
+
+
+
+
+.laatste-nieuws {
+    border-left: 1px solid #ddd;
+    padding-left: 20px;
+}
+
+.nieuws-titel {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.nieuws-titel h2 {
+    font-size: 22px;
+    white-space: nowrap;
+}
+
+.nieuws-titel a {
+    font-size: 13px;
+    color: #666;
+    white-space: nowrap;
+}
+
+.nieuws-tijdlijn {
+    border-left: 2px dotted #bbb;
+    margin-left: 8px;
+    padding-left: 20px;
+}
+
+.nieuwsbericht {
+    position: relative;
+    padding-bottom: 23px;
+}
+
+.nieuwsbericht::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 5px;
+    width: 9px;
+    height: 9px;
+    background: #222;
+    border-radius: 50%;
+}
+
+.nieuwsbericht span {
+    font-size: 13px;
+    color: #777;
+}
+
+.nieuwsbericht p {
+    font-size: 15px;
+    line-height: 1.45;
+    margin-top: 8px;
+}
+
+.bekijk-alles {
+    display: block;
+    color: #e60000;
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 0;
+    margin-left: 8px;
+}
+
+
+
+
+.footer {
+    border-top: 1px solid #ddd;
+    margin-top: 75px;
+    padding: 55px 7% 0;
+}
+
+.footer-inhoud {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr 0.9fr;
+    gap: 35px;
+    max-width: 1320px;
+    margin: 0 auto;
+}
+
+.footer-kolom {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.footer-kolom h3 {
+    color: #e60000;
+    font-size: 17px;
+    margin-bottom: 3px;
+}
+
+.footer-kolom a {
+    color: #666;
+    font-size: 15px;
+}
+
+.footer-kolom a:hover {
+    text-decoration: underline;
+}
+
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid #ddd;
+}
+
+.contact-icoon {
+    background: #f3eeee;
+    color: #e60000;
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+    flex-shrink: 0;
+}
+
+.contact-item strong {
+    font-size: 15px;
+}
+
+.contact-item p {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+
+
+.footer-onderkant {
+    max-width: 1320px;
+    margin: 55px auto 0;
+    padding: 25px 0;
+    border-top: 1px solid #ddd;
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: #666;
+    font-size: 15px;
+}
+
+.footer-logo img {
+    width: 75px;
+    height: auto;
+}
+
+.footer-onderkant > a {
+    text-decoration: underline;
+}
+
+.socials {
+    display: flex;
+    gap: 15px;
+    margin-left: auto;
+}
+
+.socials a {
+    background: #e60000;
+    color: white;
+    width: 37px;
+    height: 37px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 19px;
+    font-weight: bold;
+}
+
+
+
+@media (max-width: 1000px) {
+
+    .header {
+        padding: 0 20px;
+    }
+
+    .header-rechts {
+        gap: 15px;
+    }
+
+    .header-icon {
+        font-size: 14px;
+    }
+
+    .nieuws-grid {
+        grid-template-columns: minmax(0, 1.8fr) minmax(250px, 0.9fr);
+    }
+
+    .menu {
+        justify-content: flex-start;
+    }
+
+    .footer-inhoud {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .header {
+        height: auto;
+        min-height: 70px;
+        flex-wrap: wrap;
+        padding: 12px 15px;
+        gap: 15px;
+    }
+
+    .header-links {
+        gap: 20px;
+    }
+
+    .header-rechts {
+        flex-wrap: wrap;
+        gap: 12px;
+    }
+
+    .teletext-logo,
+    .npo-logo {
+        display: none;
+    }
+
+    .menu {
+        height: 55px;
+        gap: 22px;
+        padding: 0 15px;
+    }
+
+    .pagina {
+        width: 94%;
+        margin-top: 22px;
+    }
+
+    .nieuws-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .linkerkolom,
+    .rechterkolom {
+        width: 100%;
+    }
+
+    .hoofdfoto {
+        height: 260px;
+    }
+
+    .hoofdfoto-tekst h1 {
+        font-size: 20px;
+    }
+
+    .crisis-artikelen {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .crisis-artikel img {
+        height: 120px;
+    }
+
+    .crisis-artikel h3 {
+        font-size: 14px;
+    }
+
+    .extra-artikelen {
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .artikel img {
+        height: 130px;
+    }
+
+    .rechterkolom {
+        margin-top: 35px;
+    }
+
+    .footer {
+        padding: 35px 6% 0;
+        margin-top: 50px;
+    }
+
+    .footer-inhoud {
+        grid-template-columns: 1fr 1fr;
+        gap: 30px 20px;
+    }
+
+    .footer-onderkant {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .socials {
+        width: 100%;
+        margin-left: 0;
+    }
+
+}
